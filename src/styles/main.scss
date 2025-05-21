@@ -1,3 +1,54 @@
-body {
+@import 'utils';
+@import './components/header';
+@import './components/button';
+@import './components/aside-menu';
+@import './components/menu';
+@import './components/swiper';
+@import './components/about-us';
+@import './components/our-expertise';
+@import './components/services';
+@import './components/testimonials';
+@import './components/apply';
+@import './components/footer';
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  height: calc(100vh - 40px);
+  background: $c-gray;
+}
+
+main {
+  padding: 120px 0;
+
+  @include on-tablet {
+    padding-bottom: 0;
+  }
+}
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  border-bottom: 2px solid white !important;
+
+  background-color: $dark-bg !important;
+  -webkit-box-shadow: 0 0 0 30px $dark-bg inset !important;
+
+  transition: all 0.4s;
+
+  -webkit-text-fill-color: white !important;
 }

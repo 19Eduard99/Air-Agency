@@ -1,0 +1,18 @@
+%flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+%header-link {
+  position: relative;
+
+  display: inline-block;
+
+  font-size: 13px;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}

@@ -1,0 +1,282 @@
+.footer {
+  position: relative;
+
+  overflow-x: hidden;
+
+  padding: 72px 0 80px;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+
+  font-family: $font-primary;
+
+  background: $dark-bg;
+
+  @include on-tablet {
+    top: -40px;
+  }
+
+  &__form-title {
+    margin-bottom: 48px;
+
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 130%;
+    color: $white;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    @include on-big-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__form {
+    label {
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    input,
+    textarea {
+      resize: none;
+      scrollbar-width: none;
+
+      overflow: auto;
+
+      width: 100%;
+      height: 40px;
+      padding-bottom: 18px;
+      border: none;
+      border-bottom: 2px solid $white;
+
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 22px;
+      color: $white;
+
+      background: transparent;
+      outline: 0;
+
+      transition: all 0.4s;
+
+      &:active,
+      &:focus {
+        border-color: $color-link-bg;
+      }
+    }
+
+    textarea::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include on-tablet {
+      max-width: 65%;
+    }
+
+    @include on-big-tablet {
+      width: 40%;
+    }
+  }
+
+  &__form-button {
+    cursor: pointer;
+
+    display: inline-block;
+
+    width: 100%;
+    border: none;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    color: $white;
+    text-align: center;
+
+    outline: 0;
+
+    @include on-tablet {
+      max-width: 264px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  &__contacts-info {
+    p {
+      margin-bottom: 8px;
+
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+
+      opacity: 0.5;
+    }
+
+    &:last-child p {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__contacts-link {
+    position: relative;
+
+    display: block;
+
+    max-width: max-content;
+    margin-bottom: 40px;
+
+    font-family: $font-secondary;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 150%;
+    color: $white;
+    text-decoration: none;
+    &::before {
+      @include nav-link-before;
+    }
+
+    &:hover::before {
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__socials-item {
+    list-style: none;
+  }
+
+  &__socials-link {
+    display: flex;
+  }
+
+  .facebook {
+    @include svg-mask('../images/footer/facebook.svg');
+  }
+
+  .twitter {
+    @include svg-mask('../images/footer/twitter.svg');
+  }
+
+  .instagram {
+    @include svg-mask('../images/footer/instagram.svg');
+  }
+
+  &__nav {
+    margin-top: 80px;
+
+    @include on-tablet {
+      margin-top: 139px;
+    }
+
+    @include on-big-tablet {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+
+    @include svg-mask('../images/logo/air-logo.svg');
+
+    width: 46px;
+    height: 28px;
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    margin-top: 48px;
+
+    list-style: none;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 64px;
+      justify-content: space-between;
+    }
+
+    @include on-big-tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__nav-link {
+    position: relative;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    &::before {
+      @include nav-link-before;
+    }
+
+    &:hover::before {
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  .alert {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    transform: translateX(150%);
+
+    display: flex;
+    align-items: center;
+
+    margin: 15px;
+    padding: 15px;
+    border-radius: 4px;
+
+    font-size: 20px;
+    line-height: 1.5;
+
+    transition: all 0.5s ease;
+
+    &-success {
+      border: 1px solid #c3e6cb;
+      color: #155724;
+      background-color: #d4edda;
+    }
+
+    &-icon {
+      flex-shrink: 0;
+
+      width: 32px;
+      height: 32px;
+      margin-right: 15px;
+
+      background-image: url('../images/footer/success.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
